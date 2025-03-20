@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="logo">ChatBot</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <div id="buttons">
+                <a id="btn-new-chat" href="index.html">Nuevo chat</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="chat-history">
+             
+            <div id="chat-messages">
+            </div> 
+            
+        </section>
+        <h1 id="h1-welcome">Hola, soy Izan, estoy aquí para lo que necesites!</h1>
+        <form method="post" id="new-message">
+            
+            <div id="form-content">
+                <textarea id="input-text" placeholder="Escribe tu mensaje aquí..."></textarea>
+
+                <button id="send"><img src="assets/send-img.png" width="30px"></button> 
+                
+            </div>
+            
+        </form>
+        <section id="suggested-questions">
+            <button id="utility-chat">Para que sirve este chatbot?</button>
+            <button id="what-do">Que sabes hacer?</button>
+            <button id="what-proyects">Que proyectos has creado?</button>
+        </section>
+        
+    </main>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
+
+

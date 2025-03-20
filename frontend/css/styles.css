@@ -1,0 +1,259 @@
+:root {
+    --primary-color: #2300FF;
+    --font-family-roboto: "Roboto", sans-serif;
+    --font-family-noto: "Noto Sans", sans-serif;
+    --font-size-base: 17.5px;
+    --font-size-large: 18px;
+    --font-size-xlarge: 21px;
+    --font-size-xxlarge: 40px;
+    --header-height: 80px;
+    --border-radius: 15px;
+    --border-radius-large: 25px;
+    --padding-base: 10px;
+    --padding-large: 20px;
+    --padding-xlarge: 25px;
+    --background-color: #fff;
+    --background-color-light: rgba(228, 227, 227, 0.8);
+    --border-color: rgb(224, 224, 224);
+    --transition-duration: 0.3s;
+    --font-color: black; /* Variable para el color de la fuente */
+}
+
+/* Fuente global */
+body {
+    font-family: var(--font-family-roboto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    height: 100vh; /* Asegura que ocupa toda la pantalla */
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
+/* Estilos del header */
+header {
+    font-family: var(--font-family-noto);
+    padding: var(--padding-base);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--border-color);
+    position: fixed; /* Fijamos el header */
+    top: calc(-1 * var(--header-height)); /* Lo ocultamos arriba (ajusta según la altura del header) */
+    left: 0;
+    background-color: var(--background-color); /* Fondo blanco para que sea visible */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    transition: top var(--transition-duration) ease; /* Suave transición al aparecer/desaparecer */
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
+/* Estilos de la navegación */
+nav {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Distribuye los elementos */
+    width: 100%;
+    margin: var(--padding-base);
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
+/* Logo */
+#logo {
+    font-weight: 600;
+    font-size: var(--font-size-xlarge);
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
+/* Botones alineados a la derecha */
+#buttons {
+    margin-left: auto;
+}
+
+#btn-new-chat {
+    font-family: var(--font-family-noto);
+    font-weight: 600;
+    font-size: var(--font-size-large);
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: var(--padding-base) var(--padding-large);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    margin-left: var(--padding-base);
+}
+
+@media (max-width: 600px) {
+    #buttons {
+        margin-left: 0;
+    }
+
+    ul {
+        column-gap: normal;
+    }
+}
+
+/* Estilos de la lista de navegación */
+ul {
+    margin: 0 var(--padding-base);
+    padding: 0;
+    display: flex;
+    column-gap: var(--padding-base);
+    flex-direction: row;
+}
+
+li {
+    list-style: none;
+}
+
+li a {
+    text-decoration: none;
+    margin-left: var(--padding-base);
+    color: var(--font-color); /* Aplicar color de fuente */
+    font-weight: 500;
+    font-size: var(--font-size-large);
+}
+
+/* Contenedor principal */
+main {
+    display: flex;
+    row-gap: var(--padding-large);
+    flex-direction: column;
+    max-width: 55rem;
+    width: 100%;
+    margin: calc(var(--header-height) + var(--padding-base)) auto var(--padding-large) auto; /* Centrado automático */
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
+#chat-history {
+    margin: var(--padding-large) var(--padding-large) 5rem var(--padding-large);
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
+/* Contenedor de los mensajes */
+#chat-messages {
+    row-gap: var(--padding-large);
+    display: flex;
+    flex-direction: column;
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
+/* Estilos generales para los mensajes */
+.span-text-user {
+    max-width: 28rem; /* Límite máximo de ancho */
+    width: fit-content; /* Se ajusta al contenido sin exceder max-width */
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: var(--padding-base) var(--padding-large);
+    display: block;
+    line-height: 1.5;
+    word-wrap: break-word;
+    font-size: var(--font-size-base);
+    color: var(--font-color); /* Aplicar color de fuente */
+    position: relative;
+}
+
+
+.span-text-bot {
+    max-width: 35rem; /* Límite máximo de ancho */
+    width: fit-content; /* Se ajusta al contenido sin exceder max-width */
+    border-radius: var(--border-radius);
+    padding: var(--padding-large);
+    display: block;
+    line-height: 1.5;
+    word-wrap: break-word;
+    font-size: var(--font-size-base);
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
+/* Mensaje del bot */
+.message-bot {
+    display: flex;
+    column-gap: var(--padding-base);
+    color: var (--font-color); /* Aplicar color de fuente */
+}
+
+/* Mensaje del usuario */
+.message-user {
+    display: flex;
+    column-gap: var(--padding-large);
+    margin-left: auto; /* Alinea el mensaje a la derecha */
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
+/* Icono del mensaje */
+.span-img {
+    font-size: 23px;
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
+#h1-welcome {
+    font-family: var(--font-family-noto);
+    color: var(--primary-color);
+    font-size: var(--font-size-xxlarge);
+    line-height: 60px;
+    text-align: center;
+    color: var(--primary-color); /* Aplicar color de fuente */
+}
+#new-message{
+    margin: 0 var(--padding-base);
+}
+#form-content {
+    max-width: 35rem; /* Ancho máximo */
+    width: 100%; /* Por defecto, ocupa el ancho disponible */
+    margin: 0 auto; /* Centrado automático con márgenes */
+    padding: var(--padding-base);
+    display: flex;
+    align-items: end;
+    gap: var (--padding-base); /* Espacio entre textarea y botón */
+    border-radius: var(--border-radius-large);
+    border: none;
+    background-color: var(--background-color-light); /* Fondo gris claro con transparencia */
+    backdrop-filter: blur(3px); /* Difumina lo que está detrás */
+    box-sizing: border-box; /* Incluye padding en el ancho */
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
+#input-text {
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-roboto);
+    border-radius: var(--border-radius-large);
+    border: none;
+    background-color: transparent; /* Ligeramente más transparente que el contenedor */
+    padding: var(--padding-base) var(--padding-large);
+    width: 100%;
+    outline: none;
+    resize: none; /* Evita el redimensionamiento manual */
+    min-height: 25px; /* Altura mínima */
+    height: 20px;
+    max-height: 200px; /* Altura máxima antes de scroll */
+    overflow-y: hidden; /* Oculta la barra de desplazamiento mientras crece */
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
+#send {
+    border: none;
+    cursor: pointer;
+    background: none;
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
+#suggested-questions button {
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background-color: white;
+    font-family: var(--font-family-roboto);
+    font-size: 15px;
+    padding: var(--padding-base) var(--padding-large);
+    cursor: pointer;
+    margin: var(--padding-base) var(--padding-large) 0 0;
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
+#suggested-questions {
+    text-align: center;
+    color: var(--font-color); /* Aplicar color de fuente */
+}
+
