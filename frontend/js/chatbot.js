@@ -135,8 +135,9 @@ document.querySelector("#new-message").addEventListener("submit", (event) => {
     document.querySelector("#chat-messages").appendChild(newDivBot)
     newDivBot.appendChild(gif)
     
+    const urlServer = "https://chatbot-952713132334.europe-west1.run.app/chat";
     async function sendMessageToServer(messageInput) {
-        const response = await fetch("http://localhost:3000/chat",{
+        const response = await fetch(urlServer,{
             method : "post",
             headers : {
                 "Content-Type" : "application/json"

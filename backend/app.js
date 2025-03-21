@@ -3,10 +3,19 @@ const express = require("express");
 const { OpenAI } = require("openai");
 const cors = require("cors");
 const systemPrompt = require("./systemPrompt.js");
+const path = require('path');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+
+app.use(express.static(path.join(__dirname, '..', 'frontend')));
+
+// Redirigir a 'index.html' cuando se accede a la ruta raíz
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+});
 
 console.log("Clave API cargada:", process.env.OPENAI_API_KEY ? "Sí" : "No");
 
@@ -66,4 +75,10 @@ app.post("/chat", async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log("Servidor en http://localhost:3000"));
+app.listen(8080, () => console.log("Servidor en http://localhost:8080"));
+
+
+
+// Configurar Express para servir archivos estáticos desde la carpeta 'frontend'
+
+
